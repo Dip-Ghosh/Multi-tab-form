@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FetchDataFromWebsite;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::post('users', [UserController::class, 'store'])->name('users.store');
+Route::get('fetchData', [FetchDataFromWebsite::class, 'fetchWebsiteData'])->name('website.fetch');

@@ -6,6 +6,7 @@ use App\Http\Repository\User\UserInterface;
 use App\Http\Repository\UserInfo\UserInfoInterface;
 use App\Http\Requests\UserValidationRequest;
 use Exception;
+use Illuminate\Support\Facades\Http;
 
 
 class UserController extends Controller
@@ -20,7 +21,11 @@ class UserController extends Controller
     }
 
 
-
+    /**
+     * @param UserValidationRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws Exception
+     */
     public function store(UserValidationRequest $request)
     {
         try{
